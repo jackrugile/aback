@@ -61,6 +61,16 @@ function Aback( opt ) {
 		} else {
 			$.container = $.source.parentNode;
 			$.container.style.overflow = 'hidden';
+			// place in front to make sure stacking is natural
+			$.clone = $.source.cloneNode( true );
+			$.container.removeChild( $.source ); 
+			$.container.insertBefore( $.clone, $.container.firstChild );
+			$.source = $.clone;
+
+			/*var pos = $.container.currentStyle;
+			if( pos !== 'fixed' || pos !== 'absolute' || pos !== 'relative' ) {
+				$.container.style.position = 'relative';
+			}*/
 		}
 
 		for( var k in $.css.source ) {
@@ -134,8 +144,8 @@ function Aback( opt ) {
 				$.source.style.height = $.newHeight + 'px';
 			}
 		}
-		$.source.style.marginLeft = ( $.x * $.containerWidth ) + ( -$.newWidth * $.x ) + 'px';
-		$.source.style.marginTop = ( $.y * $.containerHeight ) + ( -$.newHeight * $.y ) + 'px';
+		$.source.style.left = ( $.x * $.containerWidth ) + ( -$.newWidth * $.x ) + 'px';
+		$.source.style.top = ( $.y * $.containerHeight ) + ( -$.newHeight * $.y ) + 'px';
 	};
 
 	$.destroy = function() {

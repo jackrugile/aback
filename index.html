@@ -5,52 +5,100 @@
 		<title>Aback.js</title>
 		<style>
 			* {
+				box-sizing: border-box;
 				margin: 0;
 				padding: 0;
 			}
 
+			html,
+			body {
+				height: 100%;
+			}
+
 			body {
 				background: #000;
+				font: 100%/1.5 sans-serif;
 			}
 
 			.wrap {
+				height: 100%;
+				position: relative;
+			}
+
+			.wrap-inner {
 				bottom: 0;
-				height: 50%;
 				left: 0;
 				margin: auto;
-				position: fixed;
+				position: absolute;
 				right: 0;
 				top: 0;
-				width: 50%;
+			}
+
+			/*h1 {
+				color: #fff;
+				font-size: 8em;
+				height: 1.2em;
+				line-height: 1em;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				position: absolute;
+				right: 0;
+				text-align: center;
+				top: 0;
+			}*/
+			h1 {
+				color: #fff;
+				font-size: 8em;
+				height: 1.2em;
+				line-height: 1em;
+				margin: 100px 0 0 0;
+				position: relative;
 			}
 		</style>
 	</head>
 	<body>
 		<!--<img class="aback" src="http://31.media.tumblr.com/a4c5fc63b6278b39233d79129b3dd59f/tumblr_mzzr7n7idZ1st5lhmo1_1280.jpg" />-->
-		<div class="wrap">
+		<!--<div class="wrap">
 			<iframe class="aback2" width="560" height="315" src="//www.youtube.com/embed/n7-YIZhwvKI?rel=0&amp;autoplay=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>			
-		</div>
+		</div>-->
 
-		<img class="aback1" src="http://s3-ec.buzzfed.com/static/enhanced/manual/002-anigif-pereir_cinemagraph_by_optimetrics-d4hjg4c.gif" />
+		<!--<img class="aback1" src="http://s3-ec.buzzfed.com/static/enhanced/manual/002-anigif-pereir_cinemagraph_by_optimetrics-d4hjg4c.gif" />-->
+		<div class="wrap">
+			<div class="wrap-inner">
+				<h1>Aback.js<img class="aback3" src="http://31.media.tumblr.com/a4c5fc63b6278b39233d79129b3dd59f/tumblr_mzzr7n7idZ1st5lhmo1_1280.jpg" /></h1>
+				<img class="aback1" src="http://31.media.tumblr.com/5d586f521b11de846229fa3cce2fc413/tumblr_myp9enmO9z1st5lhmo1_1280.jpg" />
+			</div>
+		</div>
+		<div class="wrap">
+			<div class="wrap-inner">
+				<h1>Aback.js</h1>
+				<img class="aback2" src="http://31.media.tumblr.com/a4c5fc63b6278b39233d79129b3dd59f/tumblr_mzzr7n7idZ1st5lhmo1_1280.jpg" />
+			</div>
+		</div>
 		
 		<!--<iframe class="aback" src="//player.vimeo.com/video/80930583?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
 		<script src="aback.js"></script>
 		<script>
 			var aback1 = new Aback({
-				source: document.querySelector( '.aback1' ),
-				x: 0.5,
-				y: 0.5,
-				fit: false,
-				resize: true
+				source: document.querySelector( '.aback1' )
 			});
 
 			var aback2 = new Aback({
+				source: document.querySelector( '.aback2' )
+			});
+
+			var aback3 = new Aback({
+				source: document.querySelector( '.aback3' )
+			});
+
+			/*var aback2 = new Aback({
 				source: document.querySelector( '.aback2' ),
 				x: 0.5,
 				y: 0.5,
 				fit: true,
 				resize: true
-			});
+			});*/
 
 			setTimeout( function() {
 				/*aback1.setOptions({
