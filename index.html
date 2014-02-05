@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Aback.js</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background: #000;
+			}
+
+			.wrap {
+				bottom: 0;
+				height: 50%;
+				left: 0;
+				margin: auto;
+				position: fixed;
+				right: 0;
+				top: 0;
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<img class="aback" src="http://31.media.tumblr.com/a4c5fc63b6278b39233d79129b3dd59f/tumblr_mzzr7n7idZ1st5lhmo1_1280.jpg" />-->
+		<div class="wrap">
+			<iframe class="aback2" width="560" height="315" src="//www.youtube.com/embed/n7-YIZhwvKI?rel=0&amp;autoplay=0&amp;controls=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>			
+		</div>
+
+		<img class="aback1" src="http://s3-ec.buzzfed.com/static/enhanced/manual/002-anigif-pereir_cinemagraph_by_optimetrics-d4hjg4c.gif" />
+		
+		<!--<iframe class="aback" src="//player.vimeo.com/video/80930583?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+		<script src="aback.js"></script>
+		<script>
+			var aback1 = new Aback({
+				source: document.querySelector( '.aback1' ),
+				x: 0.5,
+				y: 0.5,
+				fit: false,
+				resize: true
+			});
+
+			var aback2 = new Aback({
+				source: document.querySelector( '.aback2' ),
+				x: 0.5,
+				y: 0.5,
+				fit: true,
+				resize: true
+			});
+
+			setTimeout( function() {
+				/*aback1.setOptions({
+					fit: true
+				});*/
+				//aback1.destroy();
+			}, 2500 );
+		</script>
+	</body>
+</html>
