@@ -5,7 +5,7 @@ function Aback( opt ) {
 		if( elem.addEventListener ) {
 			elem.addEventListener( eventType, handler );
 		} else {
-			elem.attachEvent( 'on' + eventType, handler )
+			elem.attachEvent( 'on' + eventType, handler );
 		}
 	};
 
@@ -13,13 +13,13 @@ function Aback( opt ) {
 		if( elem.removeEventListener ) {
 			elem.removeEventListener( eventType, handler );
 		} else {
-			elem.detachEvent( 'on' + eventType, handler )
+			elem.detachEvent( 'on' + eventType, handler );
 		}
 	};
 
 	$.isset = function( test ) {
 		return test !== undefined;
-	}
+	};
 
 	$.log = function( data ) {
 		if( typeof console == 'object' ) {
@@ -45,13 +45,14 @@ function Aback( opt ) {
 	};
 
 	$.init = function() {
+		var k;
 		$.source = opt.source;
 		$.sourceWidth = $.source.width;
 		$.sourceHeight = $.source.height;
 
 		if( $.source.parentNode === document.body ) {
 			$.container = document.createElement( 'div' );
-			for( var k in $.css.container ) {
+			for( k in $.css.container ) {
 				$.container.style[ k ] = $.css.container[ k ];
 			}
 			$.clone = $.source.cloneNode( true );
@@ -73,7 +74,7 @@ function Aback( opt ) {
 			}*/
 		}
 
-		for( var k in $.css.source ) {
+		for( k in $.css.source ) {
 			$.source.style[ k ] = $.css.source[ k ];
 		}
 
@@ -126,7 +127,7 @@ function Aback( opt ) {
 				$.newWidth = Math.ceil( $.newHeight / $.sourceRatio );
 				$.source.style.width = $.newWidth + 'px';
 			} else {
-				$.newWidth = Math.ceil( $.containerWidth * 1 )
+				$.newWidth = Math.ceil( $.containerWidth * 1 );
 				$.source.style.width = $.newWidth + 'px';
 				$.newHeight = Math.ceil( $.newWidth * $.sourceRatio );
 				$.source.style.height = $.newHeight + 'px';
