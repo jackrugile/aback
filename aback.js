@@ -160,7 +160,8 @@ function Aback( opt ) {
 	};
 
 	if( $.isset( opt.source ) && opt.source !== null ) {
-		$.on( window, 'load', $.init );
+		//$.on( window, 'load', $.init );
+		$.init();
 	} else {
 		$.log( 'Aback: A valid source element is required.' );
 	}
