@@ -35,12 +35,12 @@ function Aback( opt ) {
 			left: '0',
 			position: 'fixed',
 			overflow: 'hidden',
-			zIndex: -999
+			zIndex: 0
 		},
 		source: {
 			display: 'block',
 			position: 'absolute',
-			zIndex: -999
+			zIndex: 0
 		}
 	};
 
